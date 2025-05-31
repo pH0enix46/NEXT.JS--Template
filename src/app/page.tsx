@@ -1,6 +1,8 @@
+"use client";
 import { ArrowRight, Clock, ShoppingBag, Star, Truck } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 import United24Banner from "~/ui/components/banners/u24";
 import { ProductCard } from "~/ui/components/product-card";
@@ -83,7 +85,10 @@ export default function HomePage() {
                 <div className="space-y-4">
                   {/* <HeroBadge /> */}
 
-                  <h1
+                  <motion.h1
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.7 }}
                     className={`
                       font-display bg-gradient-to-r from-[#00C4CC] via-[#7D2AE8]
                       to-[#7D2AE8] bg-clip-text text-4xl leading-tight font-bold
@@ -94,8 +99,11 @@ export default function HomePage() {
                     `}
                   >
                     NAFISA International Trading(BD) LTD
-                  </h1>
-                  <p
+                  </motion.h1>
+                  <motion.p
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.7, delay: 0.2 }}
                     className={`
                       max-w-[700px] text-lg text-muted-foreground
                       md:text-xl
@@ -103,24 +111,29 @@ export default function HomePage() {
                   >
                     100% Export Oriented Germents Buying House, Exporting
                     Germents Products to the World
-                  </p>
+                  </motion.p>
                 </div>
-                <div
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.7, delay: 0.3 }}
                   className={`
                     flex flex-col gap-3
                     sm:flex-row
                   `}
                 >
                   <Link href="/products">
-                    <Button
-                      className={`
-                        h-12 cursor-pointer gap-1.5 px-8 transition-colors
-                        duration-200
-                      `}
-                      size="lg"
-                    >
-                      Shop Now <ArrowRight className="h-4 w-4" />
-                    </Button>
+                    <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                      <Button
+                        className={`
+                          h-12 cursor-pointer gap-1.5 px-8 transition-colors
+                          duration-200
+                        `}
+                        size="lg"
+                      >
+                        Shop Now <ArrowRight className="h-4 w-4" />
+                      </Button>
+                    </motion.div>
                   </Link>
                   {/* <Link href="/showcase">
                     <Button
@@ -131,23 +144,36 @@ export default function HomePage() {
                       View Showcase
                     </Button>
                   </Link> */}
-                </div>
-                <div
+                </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.7, delay: 0.4 }}
                   className={`
                     flex flex-wrap gap-5 text-sm text-muted-foreground
                   `}
                 >
-                  <div className="flex items-center gap-1.5">
+                  <motion.div 
+                    whileHover={{ y: -3 }}
+                    className="flex items-center gap-1.5"
+                  >
                     <Truck className="h-5 w-5 text-primary/70" />
                     <span>Free shipping over $50</span>
-                  </div>
-                  <div className="flex items-center gap-1.5">
+                  </motion.div>
+                  <motion.div 
+                    whileHover={{ y: -3 }}
+                    className="flex items-center gap-1.5"
+                  >
                     <Clock className="h-5 w-5 text-primary/70" />
                     <span>24/7 Customer Support</span>
-                  </div>
-                </div>
+                  </motion.div>
+                </motion.div>
               </div>
-              <div
+
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8 }}
                 className={`
                   relative mx-auto hidden aspect-[4/3] w-full max-w-xl
                   overflow-hidden rounded-xl border shadow-lg
@@ -168,7 +194,7 @@ export default function HomePage() {
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   src="/hero-img.webp"
                 />
-              </div>
+              </motion.div>
             </div>
           </div>
           <div
