@@ -201,7 +201,7 @@ export function ProductCard({
             )}
           </CardContent>
 
-          {variant === "default" && (
+          {/* {variant === "default" && (
             <CardFooter className="p-4 pt-0">
               <Button
                 className={cn(
@@ -224,7 +224,7 @@ export function ProductCard({
                 Add to Cart
               </Button>
             </CardFooter>
-          )}
+          )} */}
 
           {variant === "compact" && (
             <CardFooter className="p-4 pt-0">

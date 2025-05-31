@@ -9,6 +9,7 @@ import { SEO_CONFIG } from "~/app";
 import { useCurrentUser } from "~/lib/auth-client";
 import { cn } from "~/lib/cn";
 import { Cart } from "~/ui/components/cart";
+import { ProductsModal } from "~/ui/components/products-modal";
 import { Button } from "~/ui/primitives/button";
 import { Skeleton } from "~/ui/primitives/skeleton";
 
@@ -112,6 +113,10 @@ export function Header({ showAuth = true }: HeaderProps) {
                       );
                     })}
               </ul>
+              
+              <div className="ml-6">
+                <ProductsModal />
+              </div>
             </nav>
           </div>
 
@@ -148,12 +153,12 @@ export function Header({ showAuth = true }: HeaderProps) {
                 ) : (
                   <div className="flex items-center gap-2">
                     <Link href="/auth/sign-in">
-                      <Button size="sm" variant="ghost">
+                      <Button className="cursor-pointer" size="sm" variant="ghost">
                         Log in
                       </Button>
                     </Link>
                     <Link href="/auth/sign-up">
-                      <Button size="sm">Sign up</Button>
+                      <Button className="cursor-pointer" size="sm">Sign up</Button>
                     </Link>
                   </div>
                 )}
@@ -218,6 +223,21 @@ export function Header({ showAuth = true }: HeaderProps) {
                     </Link>
                   );
                 })}
+            <div className="px-3 py-2">
+              <Link
+                className={cn(
+                  "block rounded-md px-3 py-2 text-base font-medium uppercase",
+                  `
+                    text-foreground
+                    hover:bg-muted/50 hover:text-primary
+                  `
+                )}
+                href="/products"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                OUR PRODUCTS
+              </Link>
+            </div>
           </div>
 
           {showAuth && !user && (

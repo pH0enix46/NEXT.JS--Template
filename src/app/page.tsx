@@ -3,7 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 
 import United24Banner from "~/ui/components/banners/u24";
-import { HeroBadge } from "~/ui/components/hero-badge";
 import { ProductCard } from "~/ui/components/product-card";
 import { TestimonialsSection } from "~/ui/components/testimonials/testimonials-with-marquee";
 import { Button } from "~/ui/primitives/button";
@@ -14,6 +13,7 @@ import {
   CardHeader,
   CardTitle,
 } from "~/ui/primitives/card";
+import { Carousel, CarouselItem } from "~/ui/primitives/carousel";
 
 import { categories, featuredProductsHomepage, testimonials } from "./mocks";
 
@@ -81,26 +81,19 @@ export default function HomePage() {
             >
               <div className="flex flex-col justify-center space-y-6">
                 <div className="space-y-4">
-                  <HeroBadge />
+                  {/* <HeroBadge /> */}
 
                   <h1
                     className={`
-                      font-display text-4xl leading-tight font-bold
-                      tracking-tight text-foreground
-                      sm:text-5xl
-                      md:text-6xl
+                      font-display bg-gradient-to-r from-[#00C4CC] via-[#7D2AE8]
+                      to-[#7D2AE8] bg-clip-text text-4xl leading-tight font-bold
+                      tracking-tight text-transparent uppercase
+                      sm:text-4xl
+                      md:text-5xl
                       lg:leading-[1.1]
                     `}
                   >
-                    Your One-Stop Shop for{" "}
-                    <span
-                      className={`
-                        bg-gradient-to-r from-primary to-primary/70 bg-clip-text
-                        text-transparent
-                      `}
-                    >
-                      Everything Tech
-                    </span>
+                    NAFISA International Trading(BD) LTD
                   </h1>
                   <p
                     className={`
@@ -108,8 +101,8 @@ export default function HomePage() {
                       md:text-xl
                     `}
                   >
-                    Discover premium products at competitive prices, with fast
-                    shipping and exceptional customer service.
+                    100% Export Oriented Germents Buying House, Exporting
+                    Germents Products to the World
                   </p>
                 </div>
                 <div
@@ -121,14 +114,15 @@ export default function HomePage() {
                   <Link href="/products">
                     <Button
                       className={`
-                        h-12 gap-1.5 px-8 transition-colors duration-200
+                        h-12 cursor-pointer gap-1.5 px-8 transition-colors
+                        duration-200
                       `}
                       size="lg"
                     >
                       Shop Now <ArrowRight className="h-4 w-4" />
                     </Button>
                   </Link>
-                  <Link href="/showcase">
+                  {/* <Link href="/showcase">
                     <Button
                       className="h-12 px-8 transition-colors duration-200"
                       size="lg"
@@ -136,7 +130,7 @@ export default function HomePage() {
                     >
                       View Showcase
                     </Button>
-                  </Link>
+                  </Link> */}
                 </div>
                 <div
                   className={`
@@ -155,7 +149,7 @@ export default function HomePage() {
               </div>
               <div
                 className={`
-                  relative mx-auto hidden aspect-square w-full max-w-md
+                  relative mx-auto hidden aspect-[4/3] w-full max-w-xl
                   overflow-hidden rounded-xl border shadow-lg
                   lg:block
                 `}
@@ -172,7 +166,7 @@ export default function HomePage() {
                   fill
                   priority
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  src="https://images.unsplash.com/photo-1624767735494-1929dc24ad43?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3"
+                  src="/hero-img.webp"
                 />
               </div>
             </div>
@@ -183,6 +177,73 @@ export default function HomePage() {
               via-primary/20 to-transparent
             `}
           />
+        </section>
+
+        {/* Carousel Section */}
+        <section
+          className={`
+            py-12
+            md:py-16
+          `}
+        >
+          <div
+            className={`
+              max-w-9xl container mx-auto px-4
+              sm:px-6
+              lg:px-8
+            `}
+          >
+            <Carousel className="mx-auto w-full">
+              <CarouselItem>
+                <div className="p-1">
+                  <div className="overflow-hidden rounded-xl">
+                    <Image
+                      alt="Product 1"
+                      className={`
+                        h-[500px] w-full object-cover transition-transform
+                        hover:scale-105
+                      `}
+                      height={800}
+                      src="/carousel-img/1.png"
+                      width={1200}
+                    />
+                  </div>
+                </div>
+              </CarouselItem>
+              <CarouselItem>
+                <div className="p-1">
+                  <div className="overflow-hidden rounded-xl">
+                    <Image
+                      alt="Product 2"
+                      className={`
+                        h-[500px] w-full object-cover transition-transform
+                        hover:scale-105
+                      `}
+                      height={800}
+                      src="/carousel-img/2.png"
+                      width={1200}
+                    />
+                  </div>
+                </div>
+              </CarouselItem>
+              <CarouselItem>
+                <div className="p-1">
+                  <div className="overflow-hidden rounded-xl">
+                    <Image
+                      alt="Product 3"
+                      className={`
+                        h-[500px] w-full object-cover transition-transform
+                        hover:scale-105
+                      `}
+                      height={800}
+                      src="/carousel-img/3.png"
+                      width={1200}
+                    />
+                  </div>
+                </div>
+              </CarouselItem>
+            </Carousel>
+          </div>
         </section>
 
         {/* Featured Categories */}

@@ -1,4 +1,4 @@
-import { Facebook, Github, Instagram, Linkedin, Twitter } from "lucide-react";
+import { Facebook, Instagram, Linkedin, Youtube } from "lucide-react";
 import Link from "next/link";
 
 import { SEO_CONFIG } from "~/app";
@@ -33,49 +33,55 @@ export function Footer({ className }: { className?: string }) {
               </span>
             </Link>
             <p className="text-sm text-muted-foreground">
-              Your one-stop shop for everything tech. Premium products at
-              competitive prices.
+              <div className="flex flex-col space-y-2">
+                <span>+880-9606-333222</span>
+                <span>Plot # 08, Road # 1/A, Gulshan-1, Dhaka-1212, Bangladesh</span>
+              </div>
             </p>
             <div className="flex space-x-4">
               <Button
                 className="h-8 w-8 rounded-full"
                 size="icon"
                 variant="ghost"
+                asChild
               >
-                <Facebook className="h-4 w-4" />
-                <span className="sr-only">Facebook</span>
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+                  <Facebook className="h-4 w-4" />
+                  <span className="sr-only">Facebook</span>
+                </a>
               </Button>
               <Button
                 className="h-8 w-8 rounded-full"
                 size="icon"
                 variant="ghost"
+                asChild
               >
-                <Twitter className="h-4 w-4" />
-                <span className="sr-only">Twitter</span>
+                <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">
+                  <Youtube className="h-4 w-4" />
+                  <span className="sr-only">YouTube</span>
+                </a>
               </Button>
               <Button
                 className="h-8 w-8 rounded-full"
                 size="icon"
                 variant="ghost"
+                asChild
               >
-                <Instagram className="h-4 w-4" />
-                <span className="sr-only">Instagram</span>
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+                  <Instagram className="h-4 w-4" />
+                  <span className="sr-only">Instagram</span>
+                </a>
               </Button>
               <Button
                 className="h-8 w-8 rounded-full"
                 size="icon"
                 variant="ghost"
+                asChild
               >
-                <Github className="h-4 w-4" />
-                <span className="sr-only">GitHub</span>
-              </Button>
-              <Button
-                className="h-8 w-8 rounded-full"
-                size="icon"
-                variant="ghost"
-              >
-                <Linkedin className="h-4 w-4" />
-                <span className="sr-only">LinkedIn</span>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+                  <Linkedin className="h-4 w-4" />
+                  <span className="sr-only">LinkedIn</span>
+                </a>
               </Button>
             </div>
           </div>
@@ -269,7 +275,7 @@ export function Footer({ className }: { className?: string }) {
           >
             <p className="text-sm text-muted-foreground">
               &copy; {new Date().getFullYear()} {SEO_CONFIG.name}. All rights
-              reserved.
+              reserved. | +880-9606-333222 | Plot # 08, Road # 1/A, Gulshan-1, Dhaka-1212, Bangladesh
             </p>
             <div
               className={
