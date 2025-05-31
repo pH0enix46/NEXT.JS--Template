@@ -1,8 +1,8 @@
 "use client";
+import { motion } from "framer-motion";
 import { ArrowRight, Clock, ShoppingBag, Star, Truck } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
 
 import United24Banner from "~/ui/components/banners/u24";
 import { ProductCard } from "~/ui/components/product-card";
@@ -86,9 +86,7 @@ export default function HomePage() {
                   {/* <HeroBadge /> */}
 
                   <motion.h1
-                    initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.7 }}
                     className={`
                       font-display bg-gradient-to-r from-[#00C4CC] via-[#7D2AE8]
                       to-[#7D2AE8] bg-clip-text text-4xl leading-tight font-bold
@@ -97,33 +95,38 @@ export default function HomePage() {
                       md:text-5xl
                       lg:leading-[1.1]
                     `}
+                    initial={{ opacity: 0, y: 20 }}
+                    transition={{ duration: 0.7 }}
                   >
                     NAFISA International Trading(BD) LTD
                   </motion.h1>
                   <motion.p
-                    initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.7, delay: 0.2 }}
                     className={`
                       max-w-[700px] text-lg text-muted-foreground
                       md:text-xl
                     `}
+                    initial={{ opacity: 0, y: 20 }}
+                    transition={{ delay: 0.2, duration: 0.7 }}
                   >
                     100% Export Oriented Germents Buying House, Exporting
                     Germents Products to the World
                   </motion.p>
                 </div>
                 <motion.div
-                  initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.7, delay: 0.3 }}
                   className={`
                     flex flex-col gap-3
                     sm:flex-row
                   `}
+                  initial={{ opacity: 0, y: 20 }}
+                  transition={{ delay: 0.3, duration: 0.7 }}
                 >
                   <Link href="/products">
-                    <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                    <motion.div
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
                       <Button
                         className={`
                           h-12 cursor-pointer gap-1.5 px-8 transition-colors
@@ -146,23 +149,23 @@ export default function HomePage() {
                   </Link> */}
                 </motion.div>
                 <motion.div
-                  initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.7, delay: 0.4 }}
                   className={`
                     flex flex-wrap gap-5 text-sm text-muted-foreground
                   `}
+                  initial={{ opacity: 0, y: 20 }}
+                  transition={{ delay: 0.4, duration: 0.7 }}
                 >
-                  <motion.div 
-                    whileHover={{ y: -3 }}
+                  <motion.div
                     className="flex items-center gap-1.5"
+                    whileHover={{ y: -3 }}
                   >
                     <Truck className="h-5 w-5 text-primary/70" />
                     <span>Free shipping over $50</span>
                   </motion.div>
-                  <motion.div 
-                    whileHover={{ y: -3 }}
+                  <motion.div
                     className="flex items-center gap-1.5"
+                    whileHover={{ y: -3 }}
                   >
                     <Clock className="h-5 w-5 text-primary/70" />
                     <span>24/7 Customer Support</span>
@@ -171,14 +174,14 @@ export default function HomePage() {
               </div>
 
               <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.8 }}
                 className={`
                   relative mx-auto hidden aspect-[4/3] w-full max-w-xl
                   overflow-hidden rounded-xl border shadow-lg
                   lg:block
                 `}
+                initial={{ opacity: 0, scale: 0.95 }}
+                transition={{ duration: 0.8 }}
               >
                 <div
                   className={`
@@ -209,7 +212,7 @@ export default function HomePage() {
         <section
           className={`
             py-12
-            md:py-16
+            md:py-4
           `}
         >
           <div
@@ -230,7 +233,7 @@ export default function HomePage() {
                         hover:scale-105
                       `}
                       height={800}
-                      src="/carousel-img/1.png"
+                      src="/carousel-img/2.png"
                       width={1200}
                     />
                   </div>
@@ -246,7 +249,7 @@ export default function HomePage() {
                         hover:scale-105
                       `}
                       height={800}
-                      src="/carousel-img/2.png"
+                      src="/carousel-img/1.png"
                       width={1200}
                     />
                   </div>
@@ -407,6 +410,32 @@ export default function HomePage() {
           </div>
         </section>
 
+
+
+
+        {/* Testimonials */}
+        <section
+          className={`
+            bg-muted/50 py-12
+            md:py-16
+          `}
+        >
+          <div
+            className={`
+              container mx-auto max-w-7xl px-4
+              sm:px-6
+              lg:px-8
+            `}
+          >
+            <TestimonialsSection
+              className="py-0"
+              description="Don't just take our word for it - hear from our satisfied customers"
+              testimonials={testimonials}
+              title="What Our Customers Say"
+            />
+          </div>
+        </section>
+
         {/* Features Section */}
         <section
           className={`
@@ -476,29 +505,6 @@ export default function HomePage() {
                 </Card>
               ))}
             </div>
-          </div>
-        </section>
-
-        {/* Testimonials */}
-        <section
-          className={`
-            bg-muted/50 py-12
-            md:py-16
-          `}
-        >
-          <div
-            className={`
-              container mx-auto max-w-7xl px-4
-              sm:px-6
-              lg:px-8
-            `}
-          >
-            <TestimonialsSection
-              className="py-0"
-              description="Don't just take our word for it - hear from our satisfied customers"
-              testimonials={testimonials}
-              title="What Our Customers Say"
-            />
           </div>
         </section>
 

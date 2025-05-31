@@ -80,14 +80,14 @@ export function ProductsModal() {
         aria-expanded={isOpen}
         aria-haspopup="true"
         className={`
-          flex cursor-pointer items-center gap-1 text-base font-medium uppercase
+          flex cursor-pointer items-center gap-1 text-sm font-medium
           hover:text-primary
         `}
         onClick={() => setIsOpen(!isOpen)}
         onMouseEnter={() => setIsOpen(true)}
         type="button"
       >
-        OUR PRODUCTS
+        Our Products
       </button>
 
       {isOpen && (

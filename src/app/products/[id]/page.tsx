@@ -1,10 +1,11 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 
 import { Minus, Plus, ShoppingCart, Star } from "lucide-react";
 import Image from "next/image";
 import { useParams, useRouter } from "next/navigation";
 import * as React from "react";
-import { toast } from "sonner";
+// import { toast } from "sonner";
 
 import { useCart } from "~/lib/hooks/use-cart";
 import { Button } from "~/ui/primitives/button";
@@ -248,11 +249,11 @@ export default function ProductDetailPage() {
   const router = useRouter();
 
   /* ----------------------------- Cart hook ------------------------------- */
-  const { addItem } = useCart();
+  // const { addItem } = useCart();
 
   /* ----------------------------- Local state ----------------------------- */
-  const [quantity, setQuantity] = React.useState(1);
-  const [isAdding, setIsAdding] = React.useState(false);
+  // const [quantity, setQuantity] = React.useState(1);
+  // const [isAdding, setIsAdding] = React.useState(false);
 
   /* ------------------------ Derive product object ------------------------ */
   const product = React.useMemo(() => products.find((p) => p.id === id), [id]);
@@ -266,29 +267,29 @@ export default function ProductDetailPage() {
   }, [product]);
 
   /* ------------------------------ Handlers ------------------------------- */
-  const handleQuantityChange = React.useCallback((newQty: number) => {
-    setQuantity((prev) => (newQty >= 1 ? newQty : prev));
-  }, []);
+  // const handleQuantityChange = React.useCallback((newQty: number) => {
+  //   setQuantity((prev) => (newQty >= 1 ? newQty : prev));
+  // }, []);
 
-  const handleAddToCart = React.useCallback(async () => {
-    if (!product) return;
+  // const handleAddToCart = React.useCallback(async () => {
+  //   if (!product) return;
 
-    setIsAdding(true);
-    addItem(
-      {
-        category: product.category,
-        id: product.id,
-        image: product.image,
-        name: product.name,
-        price: product.price,
-      },
-      quantity,
-    );
-    setQuantity(1);
-    toast.success(`${product.name} added to cart`);
-    await new Promise((r) => setTimeout(r, 400)); // fake latency
-    setIsAdding(false);
-  }, [addItem, product, quantity]);
+  //   setIsAdding(true);
+  //   addItem(
+  //     {
+  //       category: product.category,
+  //       id: product.id,
+  //       image: product.image,
+  //       name: product.name,
+  //       price: product.price,
+  //     },
+  //     quantity,
+  //   );
+  //   setQuantity(1);
+  //   toast.success(`${product.name} added to cart`);
+  //   await new Promise((r) => setTimeout(r, 400)); // fake latency
+  //   setIsAdding(false);
+  // }, [addItem, product, quantity]);
 
   /* -------------------------- Conditional UI ---------------------------- */
   if (!product) {
@@ -441,7 +442,7 @@ export default function ProductDetailPage() {
                 `}
               >
                 {/* Quantity */}
-                <div className="flex items-center">
+                {/* <div className="flex items-center">
                   <Button
                     aria-label="Decrease quantity"
                     disabled={quantity <= 1}
@@ -464,17 +465,17 @@ export default function ProductDetailPage() {
                   >
                     <Plus className="h-4 w-4" />
                   </Button>
-                </div>
+                </div> */}
 
                 {/* Add to cart */}
-                <Button
+                {/* <Button
                   className="flex-1"
                   disabled={!product.inStock || isAdding}
                   onClick={handleAddToCart}
                 >
                   <ShoppingCart className="mr-2 h-4 w-4" />
                   {isAdding ? "Adding…" : "Add to Cart"}
-                </Button>
+                </Button> */}
               </div>
             </div>
           </div>
