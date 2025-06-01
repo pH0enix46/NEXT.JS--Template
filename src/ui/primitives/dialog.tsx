@@ -30,14 +30,14 @@ function DialogContent({
       <DialogPrimitive.Content
         className={cn(
           `
-            fixed top-[50%] left-[50%] z-50 grid w-full max-w-[calc(100%-2rem)]
+            fixed top-[50%] left-[50%] z-50 grid w-full max-w-[calc(100%-1rem)]
             translate-x-[-50%] translate-y-[-50%] gap-4 rounded-lg border
-            bg-background p-6 shadow-lg duration-200
+            bg-background p-2 shadow-lg duration-200
             data-[state=closed]:animate-out data-[state=closed]:fade-out-0
             data-[state=closed]:zoom-out-95
             data-[state=open]:animate-in data-[state=open]:fade-in-0
             data-[state=open]:zoom-in-95
-            sm:max-w-lg
+            sm:max-w-[95vw] md:max-w-[95vw] lg:max-w-[95vw]
           `,
           className,
         )}
@@ -47,15 +47,15 @@ function DialogContent({
         {children}
         <DialogPrimitive.Close
           className={`
-            absolute top-4 right-4 rounded-xs opacity-70 ring-offset-background
-            transition-opacity
-            hover:opacity-100
+            absolute top-4 right-4 rounded-full bg-white/90 p-2 opacity-90 ring-offset-background
+            transition-all
+            hover:bg-white hover:opacity-100 hover:scale-110
             focus:ring-2 focus:ring-ring focus:ring-offset-2
             focus:outline-hidden
             disabled:pointer-events-none
-            data-[state=open]:bg-accent data-[state=open]:text-muted-foreground
-            [&_svg]:pointer-events-none [&_svg]:shrink-0
-            [&_svg:not([class*='size-'])]:size-4
+            [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg]:text-black
+            [&_svg:not([class*='size-'])]:size-5
+            z-50
           `}
         >
           <XIcon />
@@ -119,7 +119,7 @@ function DialogOverlay({
     <DialogPrimitive.Overlay
       className={cn(
         `
-          fixed inset-0 z-50 bg-black/50
+          fixed inset-0 z-50 bg-black/80 backdrop-blur-sm
           data-[state=closed]:animate-out data-[state=closed]:fade-out-0
           data-[state=open]:animate-in data-[state=open]:fade-in-0
         `,

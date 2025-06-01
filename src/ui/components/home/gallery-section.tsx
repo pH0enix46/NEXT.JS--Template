@@ -63,13 +63,15 @@ export function GallerySection() {
                   </div>
                 </DialogTrigger>
                 <DialogContent className={`
-                  max-w-9xl! overflow-hidden border-none bg-black/80 p-0
+                  w-full max-w-[98vw] overflow-hidden border-none bg-transparent p-0 shadow-none
                 `}>
-                  <img 
-                    alt={`Gallery image 1-${index} (enlarged)`} 
-                    className="max-h-[80vh] w-full object-contain"
-                    src={`/product/${num}.jpg`}
-                  />
+                  <div className="relative flex items-center justify-center">
+                    <img 
+                      alt={`Gallery image 1-${index} (enlarged)`} 
+                      className="h-auto w-full max-h-[95vh] object-contain rounded-lg shadow-2xl"
+                      src={`/product/${num}.jpg`}
+                    />
+                  </div>
                 </DialogContent>
               </Dialog>
             </div>
@@ -107,13 +109,15 @@ export function GallerySection() {
                   </div>
                 </DialogTrigger>
                 <DialogContent className={`
-                  max-w-4xl overflow-hidden border-none bg-black/80 p-0
+                  w-full max-w-[98vw] overflow-hidden border-none bg-transparent p-0 shadow-none
                 `}>
-                  <img 
-                    alt={`Gallery image 2-${index} (enlarged)`} 
-                    className="max-h-[80vh] w-full object-contain"
-                    src={`/product/${num}.jpg`}
-                  />
+                  <div className="relative flex items-center justify-center">
+                    <img 
+                      alt={`Gallery image 2-${index} (enlarged)`} 
+                      className="h-auto w-full max-h-[95vh] object-contain rounded-lg shadow-2xl"
+                      src={`/product/${num}.jpg`}
+                    />
+                  </div>
                 </DialogContent>
               </Dialog>
             </div>
@@ -151,13 +155,15 @@ export function GallerySection() {
                   </div>
                 </DialogTrigger>
                 <DialogContent className={`
-                  max-w-4xl overflow-hidden border-none bg-black/80 p-0
+                  w-full max-w-[98vw] overflow-hidden border-none bg-transparent p-0 shadow-none
                 `}>
-                  <img 
-                    alt={`Gallery image 3-${index} (enlarged)`} 
-                    className="max-h-[80vh] w-full object-contain"
-                    src={`/product/${num}.jpg`}
-                  />
+                  <div className="relative flex items-center justify-center">
+                    <img 
+                      alt={`Gallery image 3-${index} (enlarged)`} 
+                      className="h-auto w-full max-h-[95vh] object-contain rounded-lg shadow-2xl"
+                      src={`/product/${num}.jpg`}
+                    />
+                  </div>
                 </DialogContent>
               </Dialog>
             </div>
