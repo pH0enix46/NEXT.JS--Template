@@ -4,5 +4,6 @@ export { CategorySection } from "./category-section";
 export { ContactSection } from "./contact-section";
 export { FeaturedProductsSection } from "./featured-products-section";
 export { FeaturesSection } from "./features-section";
+export { GallerySection } from "./gallery-section";
 export { HeroSection } from "./hero-section";
 export { StatsSection } from "./stats-section";

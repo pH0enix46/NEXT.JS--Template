@@ -2,7 +2,41 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { categories } from "~/app/mocks";
+// Sample data for employees with random names and designations
+const employees = [
+  {
+    name: "Alex Johnson",
+    designation: "Software Engineer",
+  },
+  {
+    name: "Samantha Lee",
+    designation: "UX Designer",
+  },
+  {
+    name: "Michael Chen",
+    designation: "Product Manager",
+  },
+  {
+    name: "Emily Rodriguez",
+    designation: "Marketing Specialist",
+  },
+  {
+    name: "David Kim",
+    designation: "Data Scientist",
+  },
+  {
+    name: "Jessica Taylor",
+    designation: "Frontend Developer",
+  },
+  {
+    name: "Ryan Patel",
+    designation: "DevOps Engineer",
+  },
+  {
+    name: "Olivia Wilson",
+    designation: "Content Strategist",
+  }
+];
 
 export function CategorySection() {
   return (
@@ -26,59 +60,58 @@ export function CategorySection() {
               md:text-4xl
             `}
           >
-            Shop by Category
+            Our Employees
           </h2>
           <div className="mt-2 h-1 w-12 rounded-full bg-primary" />
           <p className="mt-4 max-w-2xl text-center text-muted-foreground">
-            Find the perfect device for your needs from our curated
-            collections
+           Our employees are the best in the business, we are committed to providing the best service to our customers
           </p>
         </div>
         <div
           className={`
-            grid grid-cols-2 gap-4
-            md:grid-cols-4 md:gap-6
+            flex overflow-x-auto pb-4 gap-4 snap-x
+            scrollbar-thin scrollbar-thumb-primary scrollbar-track-transparent
           `}
         >
-          {categories.map((category) => (
-            <Link
-              aria-label={`Browse ${category.name} products`}
+          {employees.map((employee, index) => (
+            <div
               className={`
                 group relative flex flex-col space-y-4 overflow-hidden
-                rounded-2xl border bg-card shadow transition-all
-                duration-300
-                hover:shadow-lg
+                rounded-2xl border bg-card shadow transition-all duration-300
+                hover:shadow-lg min-w-[250px] snap-start
+                flex-shrink-0
               `}
-              href={`/products?category=${category.name.toLowerCase()}`}
-              key={category.name}
+              key={index}
             >
               <div className="relative aspect-[4/3] overflow-hidden">
                 <div
                   className={`
-                    absolute inset-0 z-10 bg-gradient-to-t
-                    from-background/80 to-transparent
+                    absolute inset-0 z-10 bg-gradient-to-t from-background/80
+                    to-transparent
                   `}
                 />
-                <Image
-                  alt={category.name}
-                  className={`
-                    object-cover transition duration-300
-                    group-hover:scale-105
-                  `}
-                  fill
-                  sizes="(max-width: 768px) 50vw, (max-width: 1200px) 25vw, 20vw"
-                  src={category.image}
-                />
+                <div className="flex items-center justify-center h-full">
+                  <Image
+                    alt={employee.name}
+                    className={`
+                      object-cover transition duration-300 rounded-full
+                      group-hover:scale-105 w-32 h-32
+                    `}
+                    width={128}
+                    height={128}
+                    src="/default-avatar.png"
+                  />
+                </div>
               </div>
-              <div className="relative z-20 -mt-6 p-4">
+              <div className="relative z-20 -mt-6 p-4 text-center">
                 <div className="mb-1 text-lg font-medium">
-                  {category.name}
+                  {employee.name}
                 </div>
                 <p className="text-sm text-muted-foreground">
-                  {category.productCount} products
+                  {employee.designation}
                 </p>
               </div>
-            </Link>
+            </div>
           ))}
         </div>
       </div>

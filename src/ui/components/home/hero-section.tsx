@@ -50,7 +50,7 @@ export function HeroSection() {
                 initial={{ opacity: 0, y: 20 }}
                 transition={{ duration: 0.7 }}
               >
-                NAFISA International Trading(BD) LTD
+                JS FABRICS LTD
               </motion.h1>
               <motion.p
                 animate={{ opacity: 1, y: 0 }}

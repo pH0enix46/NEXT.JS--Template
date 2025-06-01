@@ -8,6 +8,7 @@ import {
   ContactSection,
   FeaturedProductsSection,
   FeaturesSection,
+  GallerySection,
   HeroSection,
   StatsSection,
 } from "~/ui/components/home";
@@ -34,6 +35,9 @@ export default function HomePage() {
         {/* Stats Section */}
         <StatsSection />
         
+{/* Gallery Section */}
+        <GallerySection />
+
         {/* Category Section */}
         <CategorySection />
 

@@ -21,7 +21,7 @@ export function StatsSection() {
             <div className="mb-4">
               <Calendar className="h-12 w-12 text-gray-500" />
             </div>
-            <h2 className="text-5xl font-bold text-[#4ade80]">1998</h2>
+            <h2 className="text-5xl font-bold text-[#ffd700]">1998</h2>
             <p className="mt-2 font-semibold text-gray-500">Established</p>
           </div>
 
@@ -29,7 +29,7 @@ export function StatsSection() {
             <div className="mb-4">
               <Users className="h-12 w-12 text-gray-500" />
             </div>
-            <h2 className="text-5xl font-bold text-[#4ade80]">350</h2>
+            <h2 className="text-5xl font-bold text-[#ffd700]">350</h2>
             <p className="mt-2 font-semibold text-gray-500">Skilled Employees</p>
           </div>
 
@@ -37,7 +37,7 @@ export function StatsSection() {
             <div className="mb-4">
               <Factory className="h-12 w-12 text-gray-500" />
             </div>
-            <h2 className="text-5xl font-bold text-[#4ade80]">134</h2>
+            <h2 className="text-5xl font-bold text-[#ffd700]">134</h2>
             <p className="mt-2 font-semibold text-gray-500">Associated Factories</p>
           </div>
 
@@ -45,7 +45,7 @@ export function StatsSection() {
             <div className="mb-4">
               <Building className="h-12 w-12 text-gray-500" />
             </div>
-            <h2 className="text-5xl font-bold text-[#4ade80]">4</h2>
+            <h2 className="text-5xl font-bold text-[#ffd700]">4</h2>
             <p className="mt-2 font-semibold text-gray-500">Locations</p>
           </div>
         </div>

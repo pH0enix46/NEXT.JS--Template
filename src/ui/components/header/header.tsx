@@ -75,6 +75,7 @@ export function Header({ showAuth = true }: HeaderProps) {
     { href: "/#about-us", name: "About Us" },
     { href: "/#why-choose-us", name: "Why Choose Us" },
     { href: "/#contact", name: "Contact" },
+    { href: "/#gallery", name: "Gallery" },
     { href: "/products", name: "Products" },
   ];
 
