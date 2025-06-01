@@ -1,0 +1,8 @@
+export { AboutUsSection } from "./about-us-section";
+export { CarouselSection } from "./carousel-section";
+export { CategorySection } from "./category-section";
+export { ContactSection } from "./contact-section";
+export { FeaturedProductsSection } from "./featured-products-section";
+export { FeaturesSection } from "./features-section";
+export { HeroSection } from "./hero-section";
+export { StatsSection } from "./stats-section";

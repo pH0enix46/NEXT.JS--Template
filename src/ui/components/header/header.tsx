@@ -3,7 +3,7 @@
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { SEO_CONFIG } from "~/app";
 import { useCurrentUser } from "~/lib/auth-client";
@@ -27,8 +27,54 @@ export function Header({ showAuth = true }: HeaderProps) {
   const { isPending, user } = useCurrentUser();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+  // smooth scrolling for mac users --
+  useEffect(() => {
+    const handleAnchorClick = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      const anchor = target.closest('a');
+      
+      if (!anchor) return;
+      
+      const href = anchor.getAttribute('href');
+      if (!href) return;
+      
+      if (href.includes('#')) {
+        e.preventDefault();
+        
+        const targetId = href.includes('/#') ? href.split('/#')[1] : href.split('#')[1];
+        
+        if (!targetId) return;
+        
+        if (pathname !== '/' && href.startsWith('/#')) {
+          window.location.href = href;
+          return;
+        }
+        
+        const targetElement = document.getElementById(targetId);
+        
+        if (targetElement) {
+          targetElement.scrollIntoView({ 
+            behavior: 'smooth',
+            block: 'start'
+          });
+          
+          window.history.pushState(null, '', `#${targetId}`);
+        }
+      }
+    };
+    
+    document.addEventListener('click', handleAnchorClick);
+    
+    return () => {
+      document.removeEventListener('click', handleAnchorClick);
+    };
+  }, [pathname]);
+
   const mainNavigation = [
     { href: "/", name: "Home" },
+    { href: "/#about-us", name: "About Us" },
+    { href: "/#why-choose-us", name: "Why Choose Us" },
+    { href: "/#contact", name: "Contact" },
     { href: "/products", name: "Products" },
   ];
 
